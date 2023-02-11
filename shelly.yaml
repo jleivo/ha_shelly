@@ -1,0 +1,10 @@
+- sensor:
+    - name: "Power Total"
+      unique_id: power_total
+      state: >-
+        {{ (states('sensor.shellyem3_34945474aad8_channel_a_power')|float + 
+            states('sensor.shellyem3_34945474aad8_channel_b_power')|float + 
+            states('sensor.shellyem3_34945474aad8_channel_c_power')|float) }}
+      unit_of_measurement: W
+      device_class: power
+      state_class: measurement
